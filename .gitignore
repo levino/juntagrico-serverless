@@ -3,3 +3,5 @@
 
 .vercel
 /db.sqlite3
+.env.local
+/static/

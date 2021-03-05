@@ -6,6 +6,7 @@
   "author": "Levin Keller <post@levinkeller.de>",
   "license": "MIT",
   "devDependencies": {
+    "prettier": "^2.2.1",
     "vercel": "^21.3.2"
   }
 }
