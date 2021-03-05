@@ -1,0 +1,11 @@
+{
+  "name": "juntagrico-serverless",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Levino/juntagrico-serverless.git",
+  "author": "Levin Keller <post@levinkeller.de>",
+  "license": "MIT",
+  "devDependencies": {
+    "vercel": "^21.3.2"
+  }
+}
