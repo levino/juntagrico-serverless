@@ -72,8 +72,8 @@ if DEBUG is True:
         if key.startswith("JUNTAGRICO_EMAIL_WHITELISTED"):
             whitelist_email_from_env(key)
 
-STATIC_ROOT = os.path.join(BASE_DIR, '../static')
-STATIC_URL = '/'
+STATIC_ROOT = os.path.join(BASE_DIR, '../public/static')
+STATIC_URL = '/static/'
 
 LANGUAGE_CODE = 'de-DE'
 
