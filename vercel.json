@@ -2,6 +2,6 @@
   "rewrites": [
     { "source": "/", "destination": "/api/wsgi" },
     { "source": "/(.*)", "destination": "/api/wsgi" }
-    { "source": "/static/:match*" "destination": "/:match*" }
+    { "source": "/static/:match*", "destination": "/:match*" }
   ]
 }
