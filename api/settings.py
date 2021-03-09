@@ -73,7 +73,7 @@ if DEBUG is True:
             whitelist_email_from_env(key)
 
 STATIC_ROOT = os.path.join(BASE_DIR, '../static')
-STATIC_URL = '/static/'
+STATIC_URL = '/'
 
 LANGUAGE_CODE = 'de-DE'
 
