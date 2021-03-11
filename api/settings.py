@@ -1,8 +1,8 @@
 import os
 
-DEBUG = True
+DEBUG = os.environ.get('DEBUG')
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [os.environ.get('VERCEL_URL')]
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
@@ -56,11 +56,10 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = os.environ.get('EMAIL_HOST')
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
-EMAIL_PORT = 587
+EMAIL_PORT = os.environ.get('EMAIL_HOST_PORT')
 EMAIL_USE_TLS = True
 
 WHITELIST_EMAILS = os.environ.get('WHITELIST_EMAILS', '').split(',')
-
 
 def whitelist_email_from_env(var_env_name):
     email = os.environ.get(var_env_name)
