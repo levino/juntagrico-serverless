@@ -1,6 +1,6 @@
 import os
 
-DEBUG = False
+DEBUG = (os.environ.get('DEBUG') == 'True')
 
 ALLOWED_HOSTS = ['*']
 
