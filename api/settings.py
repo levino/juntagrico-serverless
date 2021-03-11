@@ -132,3 +132,5 @@ ORGANISATION_NAME = 'SpeiseGut'
 SERVER_URL = 'speisegut.com'
 
 ADMINPORTAL_NAME = 'SpeiseGut'
+
+INFO_EMAIL = 'juntagrico@speisegut.com'
