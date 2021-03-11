@@ -1,6 +1,6 @@
 import os
 
-DEBUG = os.environ.get('DEBUG')
+DEBUG = (os.environ.get('DEBUG') == 'True')
 
 ALLOWED_HOSTS = [os.environ.get('VERCEL_URL')]
 
