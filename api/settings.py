@@ -130,3 +130,5 @@ CRISPY_FAIL_SILENTLY = not DEBUG
 
 ORGANISATION_NAME = 'SpeiseGut'
 SERVER_URL = 'speisegut.com'
+
+ADMINPORTAL_NAME = 'SpeiseGut'
