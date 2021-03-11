@@ -1,6 +1,6 @@
 import os
 
-DEBUG = (os.environ.get('DEBUG') == 'True')
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -22,7 +22,6 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'impersonate',
     'juntagrico',
-    'crispy_forms',
 ]
 
 DATABASES = {
@@ -124,9 +123,6 @@ SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'juntagrico/locale'),
 )
-
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
-CRISPY_FAIL_SILENTLY = not DEBUG
 
 ORGANISATION_NAME = 'SpeiseGut'
 SERVER_URL = 'speisegut.com'
