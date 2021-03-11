@@ -1,10 +1,10 @@
 import os
 
-DEBUG = (os.environ.get('DEBUG') == 'True')
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-SECRET_KEY = os.environ.get('JUNTAGRICO_SECRET_KEY')
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -27,12 +27,12 @@ INSTALLED_APPS = [
 
 DATABASES = {
     'default': {
-        'ENGINE': os.environ.get('JUNTAGRICO_DATABASE_BACKEND', 'django.db.backends.sqlite3'),
-        'NAME':  os.environ.get('JUNTAGRICO_DATABASE_NAME', 'juntagrico.sqlite3'),
-        'USER': os.environ.get('JUNTAGRICO_DATABASE_USER'),
-        'PASSWORD': os.environ.get('JUNTAGRICO_DATABASE_PASS'),
-        'HOST': os.environ.get('JUNTAGRICO_DATABASE_HOST'),
-        'PORT': os.environ.get('JUNTAGRICO_DATABASE_PORT'),
+        'ENGINE': os.environ.get('DATABASE_BACKEND', 'django.db.backends.sqlite3'),
+        'NAME':  os.environ.get('DATABASE_NAME', 'juntagrico.sqlite3'),
+        'USER': os.environ.get('DATABASE_USER'),
+        'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
+        'HOST': os.environ.get('DATABASE_HOST'),
+        'PORT': os.environ.get('DATABASE_PORT'),
     }
 }
 
@@ -52,14 +52,14 @@ MIDDLEWARE = [
     'impersonate.middleware.ImpersonateMiddleware',
 ]
 
-EMAIL_BACKEND = os.environ.get('JUNTAGRICO_EMAIL_BACKEND', 'django.core.mail.backends.smtp.EmailBackend')
-EMAIL_HOST = os.environ.get('JUNTAGRICO_EMAIL_HOST')
-EMAIL_HOST_USER = os.environ.get('JUNTAGRICO_EMAIL_USER')
-EMAIL_HOST_PASSWORD = os.environ.get('JUNTAGRICO_EMAIL_PASS')
-EMAIL_PORT = int(os.environ.get('JUNTAGRICO_EMAIL_PORT', 2525))
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = os.environ.get('EMAIL_HOST')
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = int(os.environ.get('EMAIL_PORT', 2525))
 EMAIL_USE_TLS = False
 
-WHITELIST_EMAILS = os.environ.get('JUNTAGRICO_WHITELIST_EMAILS', '').split(',')
+WHITELIST_EMAILS = os.environ.get('WHITELIST_EMAILS', '').split(',')
 
 
 def whitelist_email_from_env(var_env_name):
@@ -69,7 +69,7 @@ def whitelist_email_from_env(var_env_name):
 
 if DEBUG is True:
     for key in os.environ.keys():
-        if key.startswith("JUNTAGRICO_EMAIL_WHITELISTED"):
+        if key.startswith("EMAIL_WHITELISTED"):
             whitelist_email_from_env(key)
 
 STATIC_ROOT = os.path.join(BASE_DIR, '../public/static')
@@ -129,3 +129,4 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 CRISPY_FAIL_SILENTLY = not DEBUG
 
 ORGANISATION_NAME = 'SpeiseGut'
+SERVER_URL = 'speisegut.com'
